@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sloper</title>
+    <!-- Tailwind CSS v3 CDN with Plugins -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-deep": "#F6F6F6",
+                        "surface-container": "#FFFFFF",
+                        "surface-container-low": "#FFFFFF",
+                        "surface-container-lowest": "#FFFFFF",
+                        "surface-container-high": "#FFFFFF",
+                        "surface-container-highest": "#E5E7EB",
+                        "surface-elevated": "#FFFFFF",
+                        "primary": "#4583E2",
+                        "primary-blue": "#4583E2",
+                        "accent-gold": "#B45309",
+                        "tertiary": "#059669",
+                        "navy-border": "#E5E7EB",
+                        "on-surface": "#111827",
+                        "on-surface-variant": "#4B5563",
+                        "outline": "#9CA3AF",
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'Roboto', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                        body: ['Roboto', 'sans-serif'],
+                        fredoka: ['Fredoka', 'sans-serif'],
+                    }
+                },
+            },
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:wght@400;500;700&family=Grandstander:wght@900&display=swap" rel="stylesheet">
+    <!-- Google Material Symbols -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+        .primary {
+            color: #4583E2 !important;
+        }
+        a.primary[href="#download"], button.primary {
+            background-color: #4583E2 !important;
+            color: #FFFFFF !important;
+        }
+        .glass-panel {
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+        .font-grandstander, .titles {
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
+        }
+        .font-fredoka {
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
+        }
+        .gradient-text {
+            color: #000000;
+        }
+        .glow-button {
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+        }
+        .phone-frame {
+            border: 8px solid #272927;
+            border-radius: 40px;
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.12);
+            overflow: hidden;
+            background: #FFFFFF;
+        }
+    </style>
+</head>
+<body class="bg-[#F6F6F6] text-[#111827] font-body selection:bg-black selection:text-white antialiased">
+
+    <!-- Top Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-[#F6F6F6]/90 backdrop-blur-md border-b border-gray-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex justify-between items-center">
+            <!-- Brand Logo -->
+            <a href="/" class="font-fredoka font-bold text-2xl tracking-tight !text-black hover:opacity-90 transition-opacity" style="color: #000000 !important;">
+                SLOPER
+            </a>
+
+            <!-- Desktop Nav Menu -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#features" class="text-sm font-medium text-gray-600 hover:text-black transition-colors">Board</a>
+                <a href="#chests" class="text-sm font-medium text-gray-600 hover:text-black transition-colors">Route</a>
+                <a href="#boost" class="text-sm font-medium text-gray-600 hover:text-black transition-colors">Gym</a>
+                
+                <!-- Language Selector -->
+                <button id="lang-btn" class="flex items-center gap-1.5 text-xs font-medium text-gray-700 bg-white rounded-full px-3 py-1.5 border border-gray-200 hover:border-black/50 transition-colors shadow-xs">
+                    <span class="material-symbols-outlined primary text-base">language</span>
+                    <span id="lang-text">English</span>
+                    <span class="material-symbols-outlined primary text-base">expand_more</span>
+                </button>
+
+                <!-- Download CTA -->
+                <a href="#download" class="titles primary bg-primary text-white text-sm px-5 py-2 rounded-lg hover:bg-neutral-800 transition-all shadow-md">
+                    Download
+                </a>
+            </div>
+
+            <!-- Mobile Controls -->
+            <div class="flex md:hidden items-center gap-3">
+                <button id="lang-btn-mobile" class="flex items-center gap-1 text-xs font-medium text-gray-700 bg-white rounded-full px-3 py-1 border border-gray-200 shadow-xs">
+                    <span class="material-symbols-outlined primary text-base">language</span>
+                    <span>English</span>
+                    <span class="material-symbols-outlined primary text-base">expand_more</span>
+                </button>
+                <button id="mobile-menu-btn" class="material-symbols-outlined primary text-3xl p-1 focus:outline-none text-black">
+                    menu
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-200 px-6 py-4 space-y-3">
+            <a href="#features" class="block text-sm font-medium text-gray-700 hover:text-black">Board</a>
+            <a href="#chests" class="block text-sm font-medium text-gray-700 hover:text-black">Route</a>
+            <a href="#boost" class="block text-sm font-medium text-gray-700 hover:text-black">Gym</a>
+            <a href="#download" class="titles primary block text-center bg-primary text-white text-sm px-4 py-2.5 rounded-lg shadow-sm">Download App</a>
+        </div>
+    </nav>
+
+    <!-- Main Content Shell -->
+    <main class="relative overflow-hidden">
+
+        <!-- ========================================== -->
+        <!-- HERO SECTION - DESKTOP VIEW (lg:grid) -->
+        <!-- ========================================== -->
+        <section class="hidden lg:grid max-w-7xl mx-auto px-6 py-16 grid-cols-2 gap-12 items-center min-h-[calc(100vh-4rem)]">
+            <div class="space-y-6">
+                <h1 class="titles text-5xl xl:text-6xl tracking-tight text-black leading-[1.15]">
+                    Title One
+                </h1>
+                <p class="text-gray-600 text-lg leading-relaxed max-w-xl">
+                    Scan any Roblox outfit instantly. Detect accessories, prices, and creators in seconds while earning BloxCoins to redeem for free Robux.
+                </p>
+                <div class="pt-4 flex items-center gap-4">
+                    <a href="https://play.google.com/store/apps/details?id=com.bloxfit.app" class="inline-block transition-transform hover:scale-105 active:scale-95">
+                        <img src="./google-play-badge.png" alt="Get it on Google Play" class="h-14 w-auto shadow-md rounded-lg">
+                    </a>
+                </div>
+            </div>
+            <div class="relative flex justify-center items-center">
+                <div class="absolute w-[320px] h-[320px] bg-black/5 blur-[90px] rounded-full -z-10"></div>
+                <div class="phone-frame w-[300px] max-w-full animate-float">
+                    <img src="./mockup_outfit_upload.png" alt="App Screen" class="w-full h-auto object-cover">
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- HERO SECTION - MOBILE VIEW (lg:hidden) -->
+        <!-- ========================================== -->
+        <section class="lg:hidden pt-10 pb-16 px-6 text-center flex flex-col items-center relative">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[120%] aspect-square bg-black/5 rounded-full blur-[80px] -z-10"></div>
+            <span class="inline-block py-1.5 px-4 rounded-full bg-black/5 border border-black/10 text-black font-bold text-xs tracking-widest uppercase mb-4">
+                Your Climbing Coach
+            </span>
+            <h1 class="titles text-3xl sm:text-4xl text-black leading-tight mb-4">
+                Title One
+            </h1>
+            <p class="text-gray-600 text-base leading-relaxed max-w-md mx-auto mb-6">
+                The ultimate companion app to discover, match, and win premium items. Transform your digital identity today.
+            </p>
+            <a href="https://play.google.com/store/apps/details?id=com.bloxfit.app" class="inline-block transition-transform active:scale-95 mb-8">
+                <img src="./google-play-badge.png" alt="Get it on Google Play" class="h-14 w-auto mx-auto shadow-md">
+            </a>
+            <div class="relative w-full max-w-[280px] mx-auto animate-float">
+                <div class="phone-frame w-full">
+                    <img src="./mockup_outfit_upload.png" alt="App Screen" class="w-full h-auto object-cover">
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- STATS BANNER - DESKTOP VIEW (lg:block) -->
+        <!-- ========================================== -->
+        <section class="hidden lg:block py-12 bg-white border-y border-gray-200">
+            <div class="max-w-7xl mx-auto px-6 text-center space-y-8">
+                <h2 class="titles text-3xl text-black">Join +300,000 downloads</h2>
+                <div class="grid grid-cols-4 gap-8">
+                    <div class="p-6 rounded-2xl glass-panel">
+                        <div class="titles text-4xl text-black">100+</div>
+                        <div class="text-xs font-semibold uppercase tracking-wider text-gray-500 mt-2">TERMS</div>
+                    </div>
+                    <div class="p-6 rounded-2xl glass-panel">
+                        <div class="titles text-4xl text-black">5+</div>
+                        <div class="text-xs font-semibold uppercase tracking-wider text-gray-500 mt-2">LEARNING GAMES</div>
+                    </div>
+                    <div class="p-6 rounded-2xl glass-panel">
+                        <div class="titles text-4xl text-black">500+</div>
+                        <div class="text-xs font-semibold uppercase tracking-wider text-gray-500 mt-2">5-STAR REVIEWS</div>
+                    </div>
+                    <div class="p-6 rounded-2xl glass-panel">
+                        <div class="titles text-4xl text-black">24/7</div>
+                        <div class="text-xs font-semibold uppercase tracking-wider text-gray-500 mt-2">ACTIVE SUPPORT</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- STATS GRID - MOBILE VIEW (lg:hidden) -->
+        <!-- ========================================== -->
+        <section class="lg:hidden py-8 px-6 bg-white border-y border-gray-200">
+            <div class="grid grid-cols-2 gap-4 max-w-sm mx-auto">
+                <div class="text-center p-4 rounded-xl glass-panel">
+                    <div class="titles text-2xl text-black">300k</div>
+                    <div class="text-[10px] font-semibold text-gray-500 uppercase tracking-wider">DOWNLOADS</div>
+                </div>
+                <div class="text-center p-4 rounded-xl glass-panel">
+                    <div class="titles text-2xl text-black">100+</div>
+                    <div class="text-[10px] font-semibold text-gray-500 uppercase tracking-wider">TERMS</div>
+                </div>
+                <div class="text-center p-4 rounded-xl glass-panel">
+                    <div class="titles text-2xl text-black">5+</div>
+                    <div class="text-[10px] font-semibold text-gray-500 uppercase tracking-wider">LEARNING GAMES</div>
+                </div>
+                <div class="text-center p-4 rounded-xl glass-panel">
+                    <div class="titles text-2xl text-black">5★</div>
+                    <div class="text-[10px] font-semibold text-gray-500 uppercase tracking-wider">RATING</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- FEATURE 1: SUBTITLE ONE -->
+        <!-- ========================================== -->
+        <section id="features" class="py-20 px-6 max-w-7xl mx-auto">
+            <!-- Desktop Grid -->
+            <div class="hidden lg:grid grid-cols-2 gap-16 items-center">
+                <div class="flex justify-center">
+                    <div class="phone-frame w-[320px]">
+                        <img src="./mockup_detected_items.png" alt="Detected Items Screen" class="w-full h-auto object-cover">
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <span class="text-xs font-bold uppercase tracking-widest text-gray-500">VISUAL SEARCH</span>
+                    <h2 class="titles text-4xl text-black">Subtitle One</h2>
+                    <p class="text-gray-600 text-base leading-relaxed">
+                        Our AI engine analyzes every pixel to find exact matches in the Roblox catalog. Upload a screenshot and let the technology handle the rest.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="p-5 rounded-xl glass-panel space-y-2">
+                            <span class="material-symbols-outlined primary text-3xl">photo_camera</span>
+                            <h3 class="titles text-lg text-black">Instant Scan</h3>
+                            <p class="text-xs text-gray-500 leading-normal">Just upload a screenshot of any avatar you find.</p>
+                        </div>
+                        <div class="p-5 rounded-xl glass-panel space-y-2">
+                            <span class="material-symbols-outlined primary text-3xl">search</span>
+                            <h3 class="titles text-lg text-black">Item Matching</h3>
+                            <p class="text-xs text-gray-500 leading-normal">Get IDs, names, and current prices in seconds.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Layout -->
+            <div class="lg:hidden max-w-md mx-auto text-center space-y-8">
+                <div class="space-y-3">
+                    <div class="flex justify-center">
+                        <span class="material-symbols-outlined primary text-4xl" style="font-variation-settings: 'FILL' 1;">table_chart</span>
+                    </div>
+                    <h2 class="titles text-2xl text-black">Subtitle One</h2>
+                    <p class="text-gray-600 text-sm leading-relaxed px-2">
+                        Instantly identify any Roblox accessory. Our neural engine matches items with surgical precision so you can recreate any look.
+                    </p>
+                </div>
+                <div class="relative w-full max-w-[280px] mx-auto">
+                    <div class="phone-frame w-full">
+                        <img src="./mockup_detected_items.png" alt="Detected Items Mobile" class="w-full h-auto object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- FEATURE 2: SUBTITLE TWO -->
+        <!-- ========================================== -->
+        <section id="chests" class="py-20 px-6 bg-white border-y border-gray-200">
+            <div class="max-w-7xl mx-auto">
+                <!-- Desktop Grid -->
+                <div class="hidden lg:grid grid-cols-2 gap-16 items-center">
+                    <div class="space-y-6">
+                        <span class="text-xs font-bold uppercase tracking-widest text-gray-500">DAILY BLOXCOINS</span>
+                        <h2 class="titles text-4xl text-black">Subtitle Two</h2>
+                        <p class="text-gray-600 text-base leading-relaxed">
+                            Keep your streak active to unlock higher-level chests. From the Daily Free Chest to the legendary Glitch Chest, there's always something to earn.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 pt-4">
+                            <div class="p-5 rounded-xl glass-panel space-y-2">
+                                <span class="material-symbols-outlined primary text-3xl">schedule</span>
+                                <h3 class="titles text-lg text-black">24h Chest</h3>
+                                <p class="text-xs text-gray-500 leading-normal">Free every single day. Guaranteed rewards up to 8 Coins.</p>
+                            </div>
+                            <div class="p-5 rounded-xl glass-panel space-y-2">
+                                <span class="material-symbols-outlined primary text-3xl">auto_awesome</span>
+                                <h3 class="titles text-lg text-black">Glitch Chest</h3>
+                                <p class="text-xs text-gray-500 leading-normal">Multiplied rewards during special community events.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-center">
+                        <div class="phone-frame w-[320px]">
+                            <img src="./mockup_chests.png" alt="Chests & Daily Rewards Screen" class="w-full h-auto object-cover">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Layout -->
+                <div class="lg:hidden max-w-md mx-auto text-center space-y-8">
+                    <div class="space-y-3">
+                        <div class="flex justify-center">
+                            <span class="material-symbols-outlined primary text-4xl" style="font-variation-settings: 'FILL' 1;">route</span>
+                        </div>
+                        <h2 class="titles text-2xl text-black">Subtitle Two</h2>
+                        <p class="text-gray-600 text-sm leading-relaxed px-2">
+                            Complete daily challenges to earn keys. Unlock legendary chests containing exclusive skins, emotes, and rare digital assets.
+                        </p>
+                    </div>
+                    <div class="relative w-full max-w-[280px] mx-auto">
+                        <div class="phone-frame w-full">
+                            <img src="./mockup_chests.png" alt="Chests & Daily Rewards Mobile" class="w-full h-auto object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- FEATURE 3: SUBTITLE THREE -->
+        <!-- ========================================== -->
+        <section id="boost" class="py-20 px-6 max-w-7xl mx-auto">
+            <!-- Desktop Grid -->
+            <div class="hidden lg:grid grid-cols-2 gap-16 items-center">
+                <div class="flex justify-center">
+                    <div class="phone-frame w-[320px]">
+                        <img src="./mockup_giveaways.png" alt="Boost & Leaderboard Screen" class="w-full h-auto object-cover">
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <span class="text-xs font-bold uppercase tracking-widest text-gray-500">ROBLOX PROFILE PROMOTION</span>
+                    <h2 class="titles text-4xl text-black">Subtitle Three</h2>
+                    <p class="text-gray-600 text-base leading-relaxed">
+                        Feature your Roblox username on our public Monthly and Yearly leaderboards by contributing Bloxcoins. Make your profile visible to all App name users worldwide! Select your personal goal: <span class="text-black font-semibold">Get famous, just for fun, be top App name user, meet people, make more friends</span>, or <span class="text-black font-semibold">promote outfit</span>.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="p-5 rounded-xl glass-panel space-y-2">
+                            <span class="material-symbols-outlined primary text-3xl">leaderboard</span>
+                            <h3 class="titles text-lg text-black">Public Leaderboards</h3>
+                            <p class="text-xs text-gray-500 leading-normal">Compete on top 5 monthly and top 50 yearly rankings.</p>
+                        </div>
+                        <div class="p-5 rounded-xl glass-panel space-y-2">
+                            <span class="material-symbols-outlined primary text-3xl">ads_click</span>
+                            <h3 class="titles text-lg text-black">Custom Goals & Flags</h3>
+                            <p class="text-xs text-gray-500 leading-normal">Choose your objective and display your Roblox user and country flag.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Layout -->
+            <div class="lg:hidden max-w-md mx-auto text-center space-y-8">
+                <div class="space-y-3">
+                    <div class="flex justify-center">
+                        <span class="material-symbols-outlined primary text-4xl" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
+                    </div>
+                    <h2 class="titles text-2xl text-black">Subtitle Three</h2>
+                    <p class="text-gray-600 text-sm leading-relaxed px-2">
+                        Promote your Roblox account on our monthly and yearly leaderboards using Bloxcoins. Make your username visible to all users, set your goal, and build your Roblox fanbase!
+                    </p>
+                </div>
+                <div class="relative w-full max-w-[280px] mx-auto">
+                    <div class="phone-frame w-full">
+                        <img src="./mockup_giveaways.png" alt="Boost Mobile" class="w-full h-auto object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 py-12 mt-12">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="space-y-2 text-center md:text-left">
+                <a href="/" class="font-fredoka font-bold text-2xl !text-black hover:opacity-90 transition-opacity" style="color: #000000 !important;">SLOPER</a>
+                <p class="text-xs text-gray-500">
+                    © 2024 <span class="primary font-semibold">Sloper</span>. Not affiliated with any climbing corporation.
+                </p>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-6 text-xs text-gray-500">
+                <a href="/privacypolicy.html" class="hover:text-black transition-colors">Privacy Policy</a>
+                <a href="/terms.html" class="hover:text-black transition-colors">Terms of Service</a>
+                <a href="#" class="hover:text-black transition-colors">Support</a>
+                <a href="#" class="hover:text-black transition-colors">Tiktok</a>
+                <a href="#" class="hover:text-black transition-colors">Discord</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Fixed Bottom Navigation Bar (< md) -->
+    <nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center py-2.5 px-4 bg-white/95 backdrop-blur-xl border-t border-gray-200 md:hidden shadow-lg">
+        <a href="#features" class="flex flex-col items-center justify-center text-gray-500 hover:text-[#4583E2] active:scale-95 transition-all">
+            <span class="material-symbols-outlined primary text-2xl">table_chart</span>
+            <span class="text-[10px] font-medium mt-0.5">Board</span>
+        </a>
+        <a href="#chests" class="flex flex-col items-center justify-center primary font-bold active:scale-95 transition-all">
+            <div class="primary bg-[#4583E2]/10 px-4 py-1 rounded-full mb-0.5 border border-[#4583E2]/20">
+                <span class="material-symbols-outlined primary text-2xl" style="font-variation-settings: 'FILL' 1;">route</span>
+            </div>
+            <span class="text-[10px] tracking-wide primary">Route</span>
+        </a>
+        <a href="#boost" class="flex flex-col items-center justify-center text-gray-500 hover:text-[#4583E2] active:scale-95 transition-all">
+            <span class="material-symbols-outlined primary text-2xl">fitness_center</span>
+            <span class="text-[10px] font-medium mt-0.5">Gym</span>
+        </a>
+    </nav>
+
+    <!-- Spacer for Mobile Bottom Nav -->
+    <div class="h-20 md:hidden"></div>
+
+    <!-- Micro-Interactions JavaScript -->
+    <script>
+        // Toggle Mobile Navigation Drawer
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Toggle Language selector text
+        const langBtns = [document.getElementById('lang-btn'), document.getElementById('lang-btn-mobile')];
+        langBtns.forEach(btn => {
+            if (btn) {
+                btn.addEventListener('click', () => {
+                    const textSpan = btn.querySelector('span:nth-child(2)');
+                    if (textSpan) {
+                        textSpan.innerText = textSpan.innerText === 'English' ? 'Español' : 'English';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

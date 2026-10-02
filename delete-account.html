@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Your Sloper Account - Sloper</title>
+    <!-- Tailwind CSS v3 CDN with Plugins -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-deep": "#0B0F1A",
+                        "surface-container": "#171f33",
+                        "surface-container-low": "#131b2e",
+                        "surface-container-lowest": "#060e20",
+                        "surface-container-high": "#222a3d",
+                        "surface-container-highest": "#2d3449",
+                        "surface-elevated": "#1E293B",
+                        "primary": "#4583E2",
+                        "primary-blue": "#4583E2",
+                        "accent-gold": "#FACC15",
+                        "tertiary": "#4edea3",
+                        "navy-border": "#2C2D3F",
+                        "on-surface": "#dae2fd",
+                        "on-surface-variant": "#c1c6d5",
+                        "outline": "#8b919f",
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'Roboto', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                        body: ['Roboto', 'sans-serif'],
+                        fredoka: ['Fredoka', 'sans-serif'],
+                    }
+                },
+            },
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:wght@400;500;700&family=Grandstander:wght@900&display=swap" rel="stylesheet">
+    <!-- Google Material Symbols -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        .font-grandstander, .titles {
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
+        }
+        .font-fredoka {
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
+        }
+        .primary {
+            color: #4583E2 !important;
+        }
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(44, 45, 63, 0.6);
+        }
+    </style>
+</head>
+<body class="bg-surface-deep text-on-surface font-body selection:bg-primary selection:text-[#002f65] antialiased">
+
+    <!-- Top Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-surface-deep/85 backdrop-blur-md border-b border-navy-border shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex justify-between items-center">
+            <!-- Brand Logo -->
+            <a href="/" class="font-fredoka font-bold text-2xl tracking-tight !text-black hover:opacity-90 transition-opacity" style="color: #000000 !important;">
+                SLOPER
+            </a>
+
+            <!-- Desktop Nav Menu -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="/#features" class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors">Board</a>
+                <a href="/#chests" class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors">Route</a>
+                <a href="/#boost" class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors">Gym</a>
+                
+                <!-- Download CTA -->
+                <a href="/#download" class="titles bg-primary-blue text-white text-xs px-5 py-2.5 rounded-xl hover:bg-blue-600 transition-all shadow-md shadow-primary-blue/20">
+                    Download
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-on-surface-variant p-2 hover:text-white">
+                <span class="material-symbols-outlined text-2xl">menu</span>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-surface-container border-b border-navy-border px-6 py-4 space-y-3">
+            <a href="/#features" class="block text-sm text-on-surface-variant hover:text-primary">Board</a>
+            <a href="/#chests" class="block text-sm text-on-surface-variant hover:text-primary">Route</a>
+            <a href="/#boost" class="block text-sm text-on-surface-variant hover:text-primary">Gym</a>
+            <a href="/#download" class="titles block text-center bg-primary-blue text-white text-xs px-4 py-2 rounded-lg">Download</a>
+        </div>
+    </nav>
+
+    <!-- Content Shell -->
+    <main class="max-w-4xl mx-auto px-6 py-12">
+        <!-- Page Header -->
+        <div class="border-b border-navy-border pb-8 mb-10">
+            <span class="text-xs font-bold uppercase tracking-widest text-primary">ACCOUNT MANAGEMENT</span>
+            <h1 class="font-display text-4xl sm:text-5xl font-extrabold text-white mt-2 mb-2">Delete Your Bloxfit Account</h1>
+            <p class="text-sm text-on-surface-variant mb-3">Bloxfit is developed by Zega Apps.</p>
+            <p class="text-xs text-on-surface-variant">
+                Last Updated: <span class="text-white font-medium">July 23, 2026</span>
+            </p>
+        </div>
+
+        <!-- Document Body -->
+        <div class="space-y-10 text-on-surface-variant leading-relaxed text-sm">
+
+            <!-- Overview Banner -->
+            <section class="glass-panel p-6 sm:p-8 rounded-2xl border border-navy-border space-y-3">
+                <p class="text-base text-white">
+                    You can request deletion of your Bloxfit account and all associated data at any time, whether or not you currently have the app installed.
+                </p>
+                <p class="text-sm font-semibold text-accent-gold">
+                    Deletion is permanent, immediate, and cannot be undone.
+                </p>
+            </section>
+
+            <!-- Option 1: In-App Deletion -->
+            <section class="space-y-4">
+                <h2 class="font-display text-xl font-bold text-white flex items-center gap-2">
+                    <span class="text-primary material-symbols-outlined">smartphone</span>
+                    Option 1: Delete your account from within the app (recommended)
+                </h2>
+                <div class="bg-surface-container p-6 rounded-2xl border border-navy-border space-y-4">
+                    <ol class="list-decimal list-inside space-y-2.5 text-on-surface-variant">
+                        <li>Open the <strong class="text-white">Bloxfit</strong> app and log in.</li>
+                        <li>Go to the <strong class="text-white">Profile</strong> tab.</li>
+                        <li>Tap <strong class="text-white">Delete Account</strong>.</li>
+                        <li>Confirm the action when prompted.</li>
+                    </ol>
+                    <div class="p-4 rounded-xl bg-surface-container-high border border-navy-border text-xs text-white">
+                        <span class="font-semibold text-tertiary">Immediate Effect:</span> Your account and all associated data are deleted <strong class="text-white">immediately</strong> upon confirmation.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Option 2: Request by Email -->
+            <section class="space-y-4">
+                <h2 class="font-display text-xl font-bold text-white flex items-center gap-2">
+                    <span class="text-primary material-symbols-outlined">mail</span>
+                    Option 2: Request deletion by email (if you no longer have the app installed)
+                </h2>
+                <div class="bg-surface-container p-6 rounded-2xl border border-navy-border space-y-3">
+                    <p>
+                        Send an email to <a href="mailto:zega.apps.dev@gmail.com" class="text-primary hover:underline font-medium">zega.apps.dev@gmail.com</a> from the email address associated with your Bloxfit account, with the subject line <strong class="text-white">"Account Deletion Request"</strong>.
+                    </p>
+                    <p>
+                        Please include the email address linked to your Bloxfit account (or your Roblox username, if you signed up via Google) so we can locate and verify your account. We will process your request and delete your account and data <strong class="text-white">within 5 business days</strong>, and will confirm by email once completed.
+                    </p>
+                </div>
+            </section>
+
+            <!-- What data is deleted -->
+            <section class="space-y-4">
+                <h2 class="font-display text-xl font-bold text-white flex items-center gap-2">
+                    <span class="text-primary material-symbols-outlined">delete_forever</span>
+                    What data is deleted
+                </h2>
+                <p>
+                    When your account is deleted (via the app or by email request), the following data is permanently removed from our systems:
+                </p>
+                <div class="overflow-x-auto rounded-xl border border-navy-border">
+                    <table class="w-full text-left text-xs text-on-surface-variant">
+                        <thead class="bg-surface-container text-white font-semibold border-b border-navy-border">
+                            <tr>
+                                <th class="p-3">Data</th>
+                                <th class="p-3 w-40">Deleted?</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-navy-border/60 bg-surface-container-low/50">
+                            <tr>
+                                <td class="p-3 font-medium text-white">Email address and authentication credentials (Firebase Auth / Google Sign-In)</td>
+                                <td class="p-3 text-tertiary font-semibold">Yes, immediately</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-medium text-white">Display name / nickname, Roblox username, country, profile picture</td>
+                                <td class="p-3 text-tertiary font-semibold">Yes, immediately</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-medium text-white">Bloxcoins balance and transaction history</td>
+                                <td class="p-3 text-tertiary font-semibold">Yes, immediately</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-medium text-white">Chest and check-in history</td>
+                                <td class="p-3 text-tertiary font-semibold">Yes, immediately</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-medium text-white">Boost leaderboard entries (username, country flag, selected goal)</td>
+                                <td class="p-3 text-tertiary font-semibold">Yes, immediately — removed from all public leaderboards</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-medium text-white">Uploaded outfit images</td>
+                                <td class="p-3 text-on-surface-variant font-medium">Not applicable — never stored on our servers to begin with</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Data that may be retained -->
+            <section class="space-y-4">
+                <h2 class="font-display text-xl font-bold text-white flex items-center gap-2">
+                    <span class="text-primary material-symbols-outlined">shield</span>
+                    Data that may be retained
+                </h2>
+                <p>
+                    We do not retain personally identifiable data after account deletion. We may retain anonymized, aggregated usage data (which cannot be linked back to you) for analytics purposes, as described in our <a href="https://bloxfit.app/privacypolicy" class="text-primary hover:underline font-medium">Privacy Policy</a>. Third-party services we use (such as Google Play Billing, for purchase records) may retain transaction data separately, in accordance with their own retention policies and applicable law (e.g., financial record-keeping requirements).
+                </p>
+            </section>
+
+            <!-- Questions -->
+            <section class="space-y-4 bg-surface-container p-6 rounded-2xl border border-navy-border">
+                <h2 class="font-display text-xl font-bold text-white flex items-center gap-2">
+                    <span class="text-primary material-symbols-outlined">help_outline</span>
+                    Questions?
+                </h2>
+                <p>
+                    Contact us at <a href="mailto:zega.apps.dev@gmail.com" class="text-primary hover:underline font-medium">zega.apps.dev@gmail.com</a>.
+                </p>
+                <div class="space-y-1 text-xs text-white pt-2 border-t border-navy-border/80">
+                    <p class="font-bold">Gerardo Zenteno Gaeta · Bloxfit</p>
+                    <p><span class="text-on-surface-variant">Address:</span> Calle 7 sur #5931, Villa Encantada, Mexico</p>
+                    <p><span class="text-on-surface-variant">Last updated:</span> July 23, 2026</p>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface-container-lowest border-t border-navy-border py-12 mt-12">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="space-y-2 text-center md:text-left">
+                <a href="/" class="font-fredoka font-bold text-2xl !text-black hover:opacity-90 transition-opacity" style="color: #000000 !important;">SLOPER</a>
+                <p class="text-xs text-on-surface-variant">
+                    © 2024 Sloper. Not affiliated with any climbing corporation.
+                </p>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-6 text-xs text-on-surface-variant">
+                <a href="/privacypolicy.html" class="hover:text-accent-gold transition-colors">Privacy Policy</a>
+                <a href="/terms.html" class="hover:text-accent-gold transition-colors">Terms of Service</a>
+                <a href="#" class="hover:text-accent-gold transition-colors">Support</a>
+                <a href="#" class="hover:text-accent-gold transition-colors">Tiktok</a>
+                <a href="#" class="hover:text-accent-gold transition-colors">Discord</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Fixed Bottom Navigation Bar (< md) -->
+    <nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center py-2.5 px-4 bg-surface-deep/90 backdrop-blur-xl border-t border-navy-border md:hidden shadow-lg">
+        <a href="/#features" class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 active:scale-95 transition-all">
+            <span class="material-symbols-outlined text-2xl">table_chart</span>
+            <span class="text-[10px] font-medium mt-0.5">Board</span>
+        </a>
+        <a href="/#chests" class="flex flex-col items-center justify-center text-primary font-bold active:scale-95 transition-all">
+            <div class="bg-primary-blue/20 px-4 py-1 rounded-full mb-0.5 border border-primary-blue/40">
+                <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">route</span>
+            </div>
+            <span class="text-[10px] tracking-wide">Route</span>
+        </a>
+        <a href="/#boost" class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 active:scale-95 transition-all">
+            <span class="material-symbols-outlined text-2xl">fitness_center</span>
+            <span class="text-[10px] font-medium mt-0.5">Gym</span>
+        </a>
+    </nav>
+
+    <!-- Spacer for Mobile Bottom Nav -->
+    <div class="h-20 md:hidden"></div>
+
+    <!-- Micro-Interactions JavaScript -->
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>
