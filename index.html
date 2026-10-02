@@ -45,6 +45,9 @@
     <!-- Google Material Symbols -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
@@ -140,6 +143,8 @@
 
     <!-- Main Content Shell -->
     <main class="relative overflow-hidden">
+        <!-- Anchor for Download navigation -->
+        <div id="download" class="scroll-mt-24"></div>
 
         <!-- ========================================== -->
         <!-- HERO SECTION - DESKTOP VIEW (lg:grid) -->
@@ -147,13 +152,13 @@
         <section class="hidden lg:grid max-w-7xl mx-auto px-6 py-16 grid-cols-2 gap-12 items-center min-h-[calc(100vh-4rem)]">
             <div class="space-y-6">
                 <h1 class="titles text-5xl xl:text-6xl tracking-tight text-black leading-[1.15]">
-                    Title One
+                    Master Climbing with Total Confidence
                 </h1>
                 <p class="text-gray-600 text-lg leading-relaxed max-w-xl">
-                    Scan any Roblox outfit instantly. Detect accessories, prices, and creators in seconds while earning BloxCoins to redeem for free Robux.
+                    Learn essential climbing terminology, master gym beta with ease, and build unshakeable confidence every time you step into the climbing gym.
                 </p>
                 <div class="pt-4 flex items-center gap-4">
-                    <a href="https://play.google.com/store/apps/details?id=com.bloxfit.app" class="inline-block transition-transform hover:scale-105 active:scale-95">
+                    <a href="https://play.google.com/store/apps/details?id=com.zega.sloper" target="_blank" rel="noopener noreferrer" class="inline-block transition-transform hover:scale-105 active:scale-95">
                         <img src="./google-play-badge.png" alt="Get it on Google Play" class="h-14 w-auto shadow-md rounded-lg">
                     </a>
                 </div>
@@ -161,7 +166,7 @@
             <div class="relative flex justify-center items-center">
                 <div class="absolute w-[320px] h-[320px] bg-black/5 blur-[90px] rounded-full -z-10"></div>
                 <div class="phone-frame w-[300px] max-w-full animate-float">
-                    <img src="./mockup_outfit_upload.png" alt="App Screen" class="w-full h-auto object-cover">
+                    <img src="./mockup_1.png" alt="App Screen" class="w-full h-auto object-cover">
                 </div>
             </div>
         </section>
@@ -175,17 +180,17 @@
                 Your Climbing Coach
             </span>
             <h1 class="titles text-3xl sm:text-4xl text-black leading-tight mb-4">
-                Title One
+                Master Climbing with Total Confidence
             </h1>
             <p class="text-gray-600 text-base leading-relaxed max-w-md mx-auto mb-6">
-                The ultimate companion app to discover, match, and win premium items. Transform your digital identity today.
+                Master climbing vocabulary, understand gym beta effortlessly, and feel more confident on the wall every day.
             </p>
-            <a href="https://play.google.com/store/apps/details?id=com.bloxfit.app" class="inline-block transition-transform active:scale-95 mb-8">
+            <a href="https://play.google.com/store/apps/details?id=com.zega.sloper" target="_blank" rel="noopener noreferrer" class="inline-block transition-transform active:scale-95 mb-8">
                 <img src="./google-play-badge.png" alt="Get it on Google Play" class="h-14 w-auto mx-auto shadow-md">
             </a>
             <div class="relative w-full max-w-[280px] mx-auto animate-float">
                 <div class="phone-frame w-full">
-                    <img src="./mockup_outfit_upload.png" alt="App Screen" class="w-full h-auto object-cover">
+                    <img src="./mockup_1.png" alt="App Screen" class="w-full h-auto object-cover">
                 </div>
             </div>
         </section>
@@ -249,25 +254,25 @@
             <div class="hidden lg:grid grid-cols-2 gap-16 items-center">
                 <div class="flex justify-center">
                     <div class="phone-frame w-[320px]">
-                        <img src="./mockup_detected_items.png" alt="Detected Items Screen" class="w-full h-auto object-cover">
+                        <img src="./mockup_2.png" alt="Detected Items Screen" class="w-full h-auto object-cover">
                     </div>
                 </div>
                 <div class="space-y-6">
-                    <span class="text-xs font-bold uppercase tracking-widest text-gray-500">VISUAL SEARCH</span>
-                    <h2 class="titles text-4xl text-black">Subtitle One</h2>
+                    <span class="text-xs font-bold uppercase tracking-widest text-gray-500">PROGRESSION BOARD</span>
+                    <h2 class="titles text-4xl text-black">Track Your Progress</h2>
                     <p class="text-gray-600 text-base leading-relaxed">
-                        Our AI engine analyzes every pixel to find exact matches in the Roblox catalog. Upload a screenshot and let the technology handle the rest.
+                        Monitor your learning curve with real-time category percentages, examine comprehensive performance tables, and jump straight into segmented daily training sessions tailored for you.
                     </p>
                     <div class="grid grid-cols-2 gap-4 pt-4">
                         <div class="p-5 rounded-xl glass-panel space-y-2">
-                            <span class="material-symbols-outlined primary text-3xl">photo_camera</span>
-                            <h3 class="titles text-lg text-black">Instant Scan</h3>
-                            <p class="text-xs text-gray-500 leading-normal">Just upload a screenshot of any avatar you find.</p>
+                            <span class="material-symbols-outlined primary text-3xl">insights</span>
+                            <h3 class="titles text-lg text-black">Category Mastery</h3>
+                            <p class="text-xs text-gray-500 leading-normal">Follow your learning evolution with clear completion percentages per category.</p>
                         </div>
                         <div class="p-5 rounded-xl glass-panel space-y-2">
-                            <span class="material-symbols-outlined primary text-3xl">search</span>
-                            <h3 class="titles text-lg text-black">Item Matching</h3>
-                            <p class="text-xs text-gray-500 leading-normal">Get IDs, names, and current prices in seconds.</p>
+                            <span class="material-symbols-outlined primary text-3xl">fitness_center</span>
+                            <h3 class="titles text-lg text-black">Segmented Training</h3>
+                            <p class="text-xs text-gray-500 leading-normal">Analyze detailed performance tables and launch targeted daily workouts.</p>
                         </div>
                     </div>
                 </div>
@@ -279,48 +284,48 @@
                     <div class="flex justify-center">
                         <span class="material-symbols-outlined primary text-4xl" style="font-variation-settings: 'FILL' 1;">table_chart</span>
                     </div>
-                    <h2 class="titles text-2xl text-black">Subtitle One</h2>
+                    <h2 class="titles text-2xl text-black">Track Your Progress</h2>
                     <p class="text-gray-600 text-sm leading-relaxed px-2">
-                        Instantly identify any Roblox accessory. Our neural engine matches items with surgical precision so you can recreate any look.
+                        Track your learning evolution across every category, review detailed performance tables, and start segmented daily workouts on demand.
                     </p>
                 </div>
                 <div class="relative w-full max-w-[280px] mx-auto">
                     <div class="phone-frame w-full">
-                        <img src="./mockup_detected_items.png" alt="Detected Items Mobile" class="w-full h-auto object-cover">
+                        <img src="./mockup_2.png" alt="Detected Items Mobile" class="w-full h-auto object-cover">
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- ========================================== -->
-        <!-- FEATURE 2: SUBTITLE TWO -->
+        <!-- FEATURE 2: SUBTITLE TWO (ROUTE) -->
         <!-- ========================================== -->
         <section id="chests" class="py-20 px-6 bg-white border-y border-gray-200">
             <div class="max-w-7xl mx-auto">
                 <!-- Desktop Grid -->
                 <div class="hidden lg:grid grid-cols-2 gap-16 items-center">
                     <div class="space-y-6">
-                        <span class="text-xs font-bold uppercase tracking-widest text-gray-500">DAILY BLOXCOINS</span>
-                        <h2 class="titles text-4xl text-black">Subtitle Two</h2>
+                        <span class="text-xs font-bold uppercase tracking-widest text-gray-500">LEARNING ROUTE</span>
+                        <h2 class="titles text-4xl text-black">Level-Based Climbing Route</h2>
                         <p class="text-gray-600 text-base leading-relaxed">
-                            Keep your streak active to unlock higher-level chests. From the Daily Free Chest to the legendary Glitch Chest, there's always something to earn.
+                            Explore step-by-step climbing workouts organized by difficulty levels. Review terminology with rich flashcards featuring clear definitions, beta tips, example context, and native audio pronunciation.
                         </p>
                         <div class="grid grid-cols-2 gap-4 pt-4">
                             <div class="p-5 rounded-xl glass-panel space-y-2">
-                                <span class="material-symbols-outlined primary text-3xl">schedule</span>
-                                <h3 class="titles text-lg text-black">24h Chest</h3>
-                                <p class="text-xs text-gray-500 leading-normal">Free every single day. Guaranteed rewards up to 8 Coins.</p>
+                                <span class="material-symbols-outlined primary text-3xl">style</span>
+                                <h3 class="titles text-lg text-black">Interactive Flashcards</h3>
+                                <p class="text-xs text-gray-500 leading-normal">Definitions, beta tips, sample phrases, and audio pronunciation at your fingertips.</p>
                             </div>
                             <div class="p-5 rounded-xl glass-panel space-y-2">
-                                <span class="material-symbols-outlined primary text-3xl">auto_awesome</span>
-                                <h3 class="titles text-lg text-black">Glitch Chest</h3>
-                                <p class="text-xs text-gray-500 leading-normal">Multiplied rewards during special community events.</p>
+                                <span class="material-symbols-outlined primary text-3xl">route</span>
+                                <h3 class="titles text-lg text-black">Level Progression</h3>
+                                <p class="text-xs text-gray-500 leading-normal">Advance through structured difficulty tiers as you conquer each set of climbing terms.</p>
                             </div>
                         </div>
                     </div>
                     <div class="flex justify-center">
                         <div class="phone-frame w-[320px]">
-                            <img src="./mockup_chests.png" alt="Chests & Daily Rewards Screen" class="w-full h-auto object-cover">
+                            <img src="./mockup_3.png" alt="Chests & Daily Rewards Screen" class="w-full h-auto object-cover">
                         </div>
                     </div>
                 </div>
@@ -331,14 +336,14 @@
                         <div class="flex justify-center">
                             <span class="material-symbols-outlined primary text-4xl" style="font-variation-settings: 'FILL' 1;">route</span>
                         </div>
-                        <h2 class="titles text-2xl text-black">Subtitle Two</h2>
+                        <h2 class="titles text-2xl text-black">Level-Based Climbing Route</h2>
                         <p class="text-gray-600 text-sm leading-relaxed px-2">
-                            Complete daily challenges to earn keys. Unlock legendary chests containing exclusive skins, emotes, and rare digital assets.
+                            Advance through level-based routes. Master climbing terms with interactive flashcards, example usage, and native audio pronunciation.
                         </p>
                     </div>
                     <div class="relative w-full max-w-[280px] mx-auto">
                         <div class="phone-frame w-full">
-                            <img src="./mockup_chests.png" alt="Chests & Daily Rewards Mobile" class="w-full h-auto object-cover">
+                            <img src="./mockup_3.png" alt="Chests & Daily Rewards Mobile" class="w-full h-auto object-cover">
                         </div>
                     </div>
                 </div>
@@ -346,32 +351,32 @@
         </section>
 
         <!-- ========================================== -->
-        <!-- FEATURE 3: SUBTITLE THREE -->
+        <!-- FEATURE 3: SUBTITLE THREE (GYM) -->
         <!-- ========================================== -->
         <section id="boost" class="py-20 px-6 max-w-7xl mx-auto">
             <!-- Desktop Grid -->
             <div class="hidden lg:grid grid-cols-2 gap-16 items-center">
                 <div class="flex justify-center">
                     <div class="phone-frame w-[320px]">
-                        <img src="./mockup_giveaways.png" alt="Boost & Leaderboard Screen" class="w-full h-auto object-cover">
+                        <img src="./mockup_4.png" alt="Boost & Leaderboard Screen" class="w-full h-auto object-cover">
                     </div>
                 </div>
                 <div class="space-y-6">
-                    <span class="text-xs font-bold uppercase tracking-widest text-gray-500">ROBLOX PROFILE PROMOTION</span>
-                    <h2 class="titles text-4xl text-black">Subtitle Three</h2>
+                    <span class="text-xs font-bold uppercase tracking-widest text-gray-500">PRACTICE GYM</span>
+                    <h2 class="titles text-4xl text-black">Climbing Memory & Quizzes</h2>
                     <p class="text-gray-600 text-base leading-relaxed">
-                        Feature your Roblox username on our public Monthly and Yearly leaderboards by contributing Bloxcoins. Make your profile visible to all App name users worldwide! Select your personal goal: <span class="text-black font-semibold">Get famous, just for fun, be top App name user, meet people, make more friends</span>, or <span class="text-black font-semibold">promote outfit</span>.
+                        Strengthen your climbing knowledge through interactive memory games and rapid-fire quizzes. Make studying terminology engaging, monitor your accuracy stats, and climb the high-score leaderboard.
                     </p>
                     <div class="grid grid-cols-2 gap-4 pt-4">
                         <div class="p-5 rounded-xl glass-panel space-y-2">
-                            <span class="material-symbols-outlined primary text-3xl">leaderboard</span>
-                            <h3 class="titles text-lg text-black">Public Leaderboards</h3>
-                            <p class="text-xs text-gray-500 leading-normal">Compete on top 5 monthly and top 50 yearly rankings.</p>
+                            <span class="material-symbols-outlined primary text-3xl">psychology</span>
+                            <h3 class="titles text-lg text-black">Memory & Quizzes</h3>
+                            <p class="text-xs text-gray-500 leading-normal">Boost terminology retention with entertaining card matching and quick knowledge checks.</p>
                         </div>
                         <div class="p-5 rounded-xl glass-panel space-y-2">
-                            <span class="material-symbols-outlined primary text-3xl">ads_click</span>
-                            <h3 class="titles text-lg text-black">Custom Goals & Flags</h3>
-                            <p class="text-xs text-gray-500 leading-normal">Choose your objective and display your Roblox user and country flag.</p>
+                            <span class="material-symbols-outlined primary text-3xl">military_tech</span>
+                            <h3 class="titles text-lg text-black">High Scores & Records</h3>
+                            <p class="text-xs text-gray-500 leading-normal">Track your personal records and accuracy across every training game.</p>
                         </div>
                     </div>
                 </div>
@@ -383,14 +388,14 @@
                     <div class="flex justify-center">
                         <span class="material-symbols-outlined primary text-4xl" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
                     </div>
-                    <h2 class="titles text-2xl text-black">Subtitle Three</h2>
+                    <h2 class="titles text-2xl text-black">Climbing Memory & Quizzes</h2>
                     <p class="text-gray-600 text-sm leading-relaxed px-2">
-                        Promote your Roblox account on our monthly and yearly leaderboards using Bloxcoins. Make your username visible to all users, set your goal, and build your Roblox fanbase!
+                        Strengthen term retention through fun memory games, quick quizzes, and high-score accuracy tracking.
                     </p>
                 </div>
                 <div class="relative w-full max-w-[280px] mx-auto">
                     <div class="phone-frame w-full">
-                        <img src="./mockup_giveaways.png" alt="Boost Mobile" class="w-full h-auto object-cover">
+                        <img src="./mockup_4.png" alt="Boost Mobile" class="w-full h-auto object-cover">
                     </div>
                 </div>
             </div>
